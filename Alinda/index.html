@@ -1,18 +1,28 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>YOYOUU's website</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="icon" href="https://s1.ax1x.com/2022/04/18/LdQ77T.png">
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/iconfont.css" rel="stylesheet">
+    <script src="js/judge.js"></script>
 </head>
 <body>
-<hr>
-<center><h1>Hello World !</h1></center>
-<div class="para1">
-<center>
-<p>这是我的第一个网站</p>
-<p>如果你有任何意见或建议，请联系我</p>
-<p>广告位招租！广告位招租！广告位招租！广告位招租！广告位招租！</p>
-<img src="https://s1.ax1x.com/2022/04/18/LdQ77T.png" alt="yoyouu" width="42" height="42">
-<hr><hr>
-<iframe src="//player.bilibili.com/player.html?aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="200" height="150"> </iframe>
-<hr><hr>
+<div id="bigBox">
+    <form action="success.html">
+    <h1>LOGIN</h1>
+    <div class="inputBox">
+        <div class="inputText">
+            <span class="iconfont icon-yonghu"></span>
+            <input type="text"  name="uname" placeholder="Username" id="username"/>
+        </div>
+        <div class="inputText">
+            <span class="iconfont icon-mima"></span>
+            <input type="password" placeholder="Password" id="password"/>
+        </div>
+        <input class="inputButton" type="submit" onclick="judge()" value="登录">
+    </div>
+    </form>
+</div>
+</body>
+</html>
