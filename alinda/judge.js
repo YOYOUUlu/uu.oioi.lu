@@ -3,9 +3,9 @@ function judge() {
     var password = document.getElementById("password").value;
     if (username == "LoveUAlinda") {
      window.location.href = "love.html"
-    }else if(unsername == "jackyfzh" || unsername == "Jackyfzh" || unsername == "fzh") {
+    }/*else if(unsername == "jackyfzh" || unsername == "Jackyfzh" || unsername == "fzh") {
       window.location.href = "buddy.html"
-    }else {
+    }*/else {
         alert("给 爷 爬！")
         event.preventDefault();
     }
