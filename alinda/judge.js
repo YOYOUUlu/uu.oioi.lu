@@ -7,7 +7,7 @@ function judge() {
       window.location.href = "buddy.html"
     }*/else {
         alert("给 爷 爬！")
-        event.preventDefault();
+        window.location.href = "fail.html"
     }
 
 }
