@@ -1,24 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>登录页面</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="css/iconfont.css" rel="stylesheet">
-    <script src="alinda/judge.js"></script>
+    <meta charset="utf-8">
+    <title>登录页⾯</title>
 </head>
 <body>
-<div id="loginBox">
-    <form action='love.html', action='fail.html'>
-    <h1>LOGIN</h1>
-    <div class="inputBox">
-        <div class="inputText">
-            <span class="iconfont icon-yonghu"></span>
-            <input type="text"  name="uname" placeholder="Username" id="username"/>
-        </div>
-        <input class="inputButton" type="submit" onclick="judge()" value="登录">
-    </div>
-    </form>
-</div>
+<form action="./wait.html">
+    ⽤户名:<input type="text" id="uname"/><br>
+    密码:<input type="password" id="pwd"/><br>
+    <input type="submit" value="登录" onclick="return checkuser()"/>
+</form>
 </body>
+<script type="text/javascript">
+    function getValue(id) {
+        return document.getElementById(id).value;
+    }
+    function checkuser() {
+        if(getValue('uname') == "YOYOUU" && getValue('pwd') == "LoveUAlinda") {
+            return true;
+        }else {
+            alert("Wrong！给 爷 爬！")
+            return false;
+        }
+    }
+</script>
 </html>
