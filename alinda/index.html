@@ -10,13 +10,14 @@
     <input type="submit" value="登录" onclick="return checkuser()"/>
 </form>
 </body>
-//登录判定
+<!--导入js 用户名密码判断-->
+<script type="text/javascript" src="alinda/judge.js"></script>
 <script type="text/javascript">
     function getValue(id) {
         return document.getElementById(id).value;
     }
     function checkuser() {
-        if(getValue('uname') == "YOYOUU" && getValue('pwd') == "LoveUAlinda") {
+        if(getValue('uname') == "alinda" && getValue('pwd') == "20090223") {
             return true;
         }else {
             alert("Wrong！给 爷 爬！")
@@ -24,7 +25,7 @@
         }
     }
 </script>
-//防止查看源代码
+
 <script type="text/javascript">
     document.onkeydown = function()
     {
@@ -58,3 +59,4 @@
     }
 </script>
 </html>
+
