@@ -1,0 +1,26 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>等待页⾯</title>
+</head>
+<body>
+<span id="myspan">5</span>
+</body>
+<script type="text/javascript">
+    function getLabel(id) {
+      return document.getElementById(id);
+    }
+    function changeSec() {
+      //得到myspan值，每秒减⼀，会进⾏隐⼠转换
+      getLabel('myspan').innerText=getLabel('myspan').innerText-1;
+    }
+    var mytime = setInterval("changeSec()",1000);
+    //五秒后跳转
+    function tiao() {
+      clearInterval(mytime);
+      //window.open("./welcome.html","_self");
+      window.location.href = "./welcome.html";
+    }
+    setTimeout("tiao()",5000);
+  </script>
+</html>
