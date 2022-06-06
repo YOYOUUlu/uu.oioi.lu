@@ -542,6 +542,7 @@ i.iconfont.icon-z_shangpinheji {
 /*关闭按钮*/
 
 .close {
+  position: absolute;
     display: none;
     left: auto;
     top: 4px;
