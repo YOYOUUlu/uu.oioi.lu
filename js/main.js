@@ -163,7 +163,7 @@ $("#github").mouseover(function () {
 $("#qq").mouseover(function () {
     $("#link-text").html("有什么事吗");
 }).mouseout(function () {
-    $("#link-text").html("通过这里联系我");
+    $("#bilibili").html("一键三连吧！");
 });
 $("#email").mouseover(function () {
     $("#link-text").html("来封 Email");
