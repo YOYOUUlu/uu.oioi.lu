@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>随机转盘</title>
+  <style>
+    #wheel {
+      width: 300px;
+      height: 300px;
+      border: 2px solid #000;
+      border-radius: 50%;
+      position: relative;
+      margin: 20px auto;
+    }
+    
+    .item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-origin: center;
+      text-align: center;
+      line-height: 300px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #spinButton {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>随机转盘</h1>
+  <div id="wheel"></div>
+  <button id="spinButton">旋转</button>
+
+  <h2>添加项目和权重</h2>
+  <input type="text" id="itemName" placeholder="项目名称">
+  <input type="number" id="itemWeight" placeholder="权重">
+  <button id="addItem">添加项目</button>
+
+  <h2>项目列表</h2>
+  <ul id="itemList"></ul>
+
+  <script>
+    const wheel = document.getElementById('wheel');
+    const spinButton = document.getElementById('spinButton');
+    const itemList = document.getElementById('itemList');
+    const addItemButton = document.getElementById('addItem');
+    const itemNameInput = document.getElementById('itemName');
+    const itemWeightInput = document.getElementById('itemWeight');
+    
+    let items = [];
+    
+    addItemButton.addEventListener('click', () => {
+      const itemName = itemNameInput.value;
+      const itemWeight = parseInt(itemWeightInput.value);
+      
+      if (itemName && !isNaN(itemWeight)) {
+        items.push({ name: itemName, weight: itemWeight });
+        updateItemList();
+        itemNameInput.value = '';
+        itemWeightInput.value = '';
+      }
+    });
+    
+    function updateItemList() {
+      itemList.innerHTML = '';
+      items.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} (${item.weight})`;
+        itemList.appendChild(li);
+      });
+    }
+    
+    function spin() {
+      if (items.length === 0) {
+        alert('请添加项目和权重！');
+        return;
+      }
+    
+      const totalWeight = items.reduce((sum, item) => sum + item.weight, 0);
+      const randomValue = Math.random() * totalWeight;
+    
+      let currentItem = null;
+      let cumulativeWeight = 0;
+    
+      for (const item of items) {
+        cumulativeWeight += item.weight;
+        if (randomValue <= cumulativeWeight) {
+          currentItem = item;
+          break;
+        }
+      }
+    
+      alert(`随机选择的项目是：${currentItem.name}`);
+    }
+    
+    spinButton.addEventListener('click', spin);
+  </script>
+</body>
+</html>
